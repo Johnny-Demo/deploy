@@ -88,9 +88,9 @@ done
 
 for containerd in $ip3;
 do       
-   ssh root@$containerd yum -y install docker-ce-19.03.5-3.el7
-   ssh root@$containerd systemctl enable docker && \
-                        systemctl start docker
+   ssh root@$containerd yum -y install docker-ce-18.06.0.ce-3.el7
+   ssh root@$containerd systemctl enable docker 
+   ssh root@$containerd systemctl start docker
 done
    
  
@@ -139,9 +139,9 @@ done
 # 各节点安装 kubeadm kubelet kubectl
 for cli in $ip3;
 do
-   ssh root@$cli yum -y install kubeadm-1.22.5 kubelet-1.22.5 kubectl-1.22.5
-   ssh root@$cli systemctl daemon-reload && \
-                 systemctl enable kubelet 
+   ssh root@$cli yum -y install kubeadm-1.18.2 kubelet-1.18.2 kubectl-1.18.2
+   ssh root@$cli systemctl daemon-reload
+   ssh root@$cli systemctl enable kubelet 
 done
 
 
