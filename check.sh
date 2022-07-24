@@ -17,11 +17,11 @@ cat > /etc/keepalived/haproxy.sh << EOF
 # Date: 07/24/2022
 # Filename: haproxy.sh
 
-A=`ps -C haproxy --no-header | wc -l`
-if [ $A -eq 0 ]
+
+if [ ps -C haproxy --no-header | wc -l -eq 0 ]
 then
     systmectl start haproxy
-if [ $A -eq 0 ]
+if [ ps -C haproxy --no-header | wc -l -eq 0 ]
 then
     killall -9 haproxy
 echo "haproxy down" | mail -s "haproxy"
