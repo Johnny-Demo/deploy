@@ -8,7 +8,7 @@
 # 替换参数
 sed -i 's/1.2.3.4/192.168.200.3/g' /root/deploy/kubeadm-config.yaml
 sed -i 's/name: node/name: master3/g' /root/deploy/kubeadm-config.yaml
-sed -i 's/1.22.0/1.22.5/g' /root/deploy/kubeadm-config.yaml
+sed -i 's/1.18.0/1.18.2/g' /root/deploy/kubeadm-config.yaml
 
 
 # 添加内容
