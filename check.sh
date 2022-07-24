@@ -41,6 +41,6 @@ done
 
 for start in $ip_groups2;
 do
-    ssh root@$sh systemctl start keepalived
-    ssh root@$sh systemctl start haproxy
+    ssh root@$start systemctl start keepalived
+    ssh root@$start systemctl start haproxy
 done
