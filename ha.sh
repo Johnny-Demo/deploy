@@ -10,7 +10,6 @@ ip_groups="192.168.200.4 192.168.200.5"
 
 
 # 修改配置文件
-echo "" > /etc/keepalived/keepalived.conf
 cat > /etc/keepalived/keepalived.conf << EOF
 ! Configuration File for keepalived
 global_defs {
@@ -40,13 +39,12 @@ vrrp_instance VI_1 {
         192.168.200.10      
     }
     track_script {
-        check_haproxy       
+        haproxy       
     }
 }
 EOF
  
 
-echo "" > /etc/haproxy/haproxy.cfg
 cat > /etc/haproxy/haproxy.cfg << EOF
 #---------------------------------------------------------------------
 # Example configuration for a possible web application.  See the
