@@ -152,4 +152,4 @@ done
 # 调用脚本
 echo -e "\033[1;32m 正在调用 check 脚本部署当前任务！\033[0m"
 source /root/deploy/check.sh
-echo -e "\033[1;32m 调用完成\033[0m"
+echo -e "\033[1;32m 调用完成，开始调用下一个脚本！\033[0m"
