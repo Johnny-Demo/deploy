@@ -46,8 +46,8 @@ done
 # 发布并查看状态
 for host in $ip_groups3;
 do
-    ssh root@$host exportfs -arv && \
-                   showmount -e
+    ssh root@$host exportfs -arv
+    ssh root@$host showmount -e
     echo -e "\033[1;32m 已发布\033[0m"
 done
 
@@ -70,17 +70,14 @@ sed -i 's/path: !ifs!kubernetes/path: !data!volumes!v1/g' /root/nfs/deployment.y
 
 
 # 部署 nfs 服务并设置默认 StorageClass
-function deployment() {
-    kubectl apply -f nfs/*.
+kubectl apply -f /root/deploy/nfs.sh
 
-    sleep 30s
+sleep 30s
     
-    kubectl get storageclass
+kubectl get storageclass
 
-    # 标记一个StorageClass为默认的
-    kubectl patch storageclass managed-nfs-storage -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+# 标记一个StorageClass为默认的
+kubectl patch storageclass managed-nfs-storage -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 
-    kubectl get storageclass
-}
-
+kubectl get storageclass
 
