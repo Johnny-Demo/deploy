@@ -78,7 +78,3 @@ kubectl get storageclass
 
 # 标记一个StorageClass为默认的
 kubectl patch storageclass managed-nfs-storage -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-
-kubectl get storageclass
-
-
