@@ -168,7 +168,7 @@ done
 
 
 # 初始化 k8s 集群
-if [ ! f "/root/log.txt" ];then
+if [ ! -f "/root/log.txt" ];then
    touch /root/log.txt
 fi
 
