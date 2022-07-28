@@ -21,6 +21,5 @@ echo "---" >> /root/deploy/kubeadm-config.yaml
 echo "apiVersion: kubeproxy.config.k8s.io/v1alpha1" >> /root/deploy/kubeadm-config.yaml
 echo "kind: KubeProxyConfiguration" >> /root/deploy/kubeadm-config.yaml
 echo "featureGates:" >> /root/deploy/kubeadm-config.yaml
-sed -i '/featureGates/a\  SupportIPVSProxyMode: "true"' /root/deploy/kubeadm-config.yaml
+sed -i '/featureGates/a\  SupportIPVSProxyMode: true' /root/deploy/kubeadm-config.yaml
 echo "mode: ipvs" >> /root/deploy/kubeadm-config.yaml
-
