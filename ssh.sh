@@ -33,6 +33,6 @@ function sshFreeLogin()
               }
 EOF
  # 读取存储ip的文件，host_ip文件所在的目录地址
- done < /home/hadoop/automaticDeploy/host_ip.txt
+ done < /root/host_ip.txt
 }
 sshFreeLogin
