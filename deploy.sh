@@ -172,7 +172,7 @@ if [ ! -f "/root/log.txt" ];then
    touch /root/log.txt
 fi
 
-kubeadm init --config /root/deploy/kubeadm-config.yaml > /root/log.txt
+kubeadm init --config /root/deploy/kubeadm-config.yaml --ignore-preflight-errors=all > /root/log.txt
 
 
 # 其他 master 节点创建路径
