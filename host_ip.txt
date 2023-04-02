@@ -1,4 +1,0 @@
-192.168.200.3 master3 root admin
-192.168.200.4 master4 root admin
-192.168.200.5 master5 root admin
-192.168.200.6 node6 root admin
