@@ -1,0 +1,5 @@
+192.192.191.10 master1.com root admin
+192.192.191.11 master2.com root admin
+192.192.191.12 master3.com root admin
+192.192.191.13 node1.com   root admin
+192.192.191.14 node2.com   root admin
