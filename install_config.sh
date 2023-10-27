@@ -150,11 +150,11 @@ ip3="192.192.191.12"
 ssh root@$ip3 sed -i 's/100/80/g' /etc/keepalived/keepalived.conf
 
 # 运行 check.sh 脚本自动创建
-source /root/deploy-Uat-three/check.sh
+source /root/deploy/check.sh
 
 # 发送 check.sh 脚本到其他主节点并运行
 for file2 in $ip
 do
-   scp /root/deploy-Uat-three/check.sh $file2:/root/check.sh
+   scp /root/deploy/check.sh $file2:/root/check.sh
    ssh root@$file2 sh /root/check.sh
 done
