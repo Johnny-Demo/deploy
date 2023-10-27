@@ -10,23 +10,23 @@ ip2="192.192.191.13"
 ip3="192.192.191.11 192.192.191.12 192.192.191.13"
 
 # 调用 deploy.sh 脚本
-source /root/deploy-Uat-three/deploy.sh
+source /root/deploy/deploy.sh
 
 # 发送 deploy.sh 到其他服务器
 for host in $ip3
 do
-   scp /root/deploy-Uat-three/deploy.sh $host:/root/
+   scp /root/deploy/deploy.sh $host:/root/
    ssh root@$host sh /root/deploy.sh
 done
 
 # 调用 install-config.sh 脚本
-source /root/deploy-Uat-three/install_config.sh
+source /root/deploy/install_config.sh
 
 # 获取默认配置文件
 kubeadm config print init-defaults > /root/kubeadm-config.yaml
 
 # 调用 yaml.sh 脚本
-source /root/deploy-Uat-three/yaml.sh
+source /root/deploy/yaml.sh
 
 # 下载 k8s 镜像
 kubeadm config images pull --config /root/kubeadm-config.yaml
@@ -66,4 +66,4 @@ do
 done
 
 # 安装网络插件
-git clone https://github.com/flannel-io/flannel.git && kubectl apply -f /root/deploy-Uat-three/flannel/Documentation/kube-flannel.yml  
+git clone https://github.com/flannel-io/flannel.git && kubectl apply -f /root/deploy/flannel/Documentation/kube-flannel.yml  
