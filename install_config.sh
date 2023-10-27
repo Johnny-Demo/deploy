@@ -122,9 +122,9 @@ listen stats
 backend kubernetes-apiserver
     mode        tcp
     balance     roundrobin
-    server master1.com 192.192.191.10:6443 check
-    server master2.com 192.192.191.11:6443 check
-    server master3.com 192.192.191.12:6443 check
+    server k8s-master1 192.192.191.10:6443 check
+    server k8s-master2 192.192.191.11:6443 check
+    server k8s-master3 192.192.191.12:6443 check
 EOF
 
 # 定义 IP 组
