@@ -11,6 +11,10 @@ EOF
 # 关闭防火墙
 systemctl stop firewalld && systemctl disable firewalld 2>&1 >/dev/null
 
+# 安装 chrony
+yum -y install chrony
+systemctl start chronyd && systemctl enable chronyd
+
 # 同步服务器时间
 timedatectl set-timezone Asia/Shanghai && chronyc -a makestep 2>&1 >/dev/null
 
